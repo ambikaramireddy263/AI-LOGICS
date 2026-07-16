@@ -1,0 +1,14 @@
+s = "pwwkew"
+l = ""
+r = ""
+for i in range(len(s)):
+    if s[i] != s[i-1] :
+        l +=s[i]
+    
+for i in s:
+    for j in l:
+        if i != j:
+            r += i 
+            break
+print(r)
+            
