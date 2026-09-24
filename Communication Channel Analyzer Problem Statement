@@ -1,14 +1,21 @@
 s = "pwwkew"
+
 l = ""
-r = ""
-for i in range(len(s)):
-    if s[i] != s[i-1] :
-        l +=s[i]
-    
+larg = ""
+
 for i in s:
-    for j in l:
-        if i != j:
-            r += i 
-            break
-print(r)
-            
+
+    if i not in l:
+        l += i
+
+    else:
+        if len(l) > len(larg):
+            larg = l
+
+        l = l[l.index(i) + 1:] + i
+
+if len(l) > len(larg):
+    larg = l
+
+print("Longest substring:", larg)
+print("Length:", len(larg))
